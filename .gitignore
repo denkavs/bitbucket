@@ -5,3 +5,5 @@ source/EFolderDomain/obj/
 source/UnitTestEFolderBackUp/bin/
 source/UnitTestEFolderBackUp/obj/
 source/.vs/
+app/app.publish/
+app/ConsoleBackUp.vshost.exe
