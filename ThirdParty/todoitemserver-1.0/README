@@ -1,0 +1,208 @@
+This is a simple server for tracking todo items.
+The system contains two entity types User and Todo.
+ - User has an id, a username, an email address and a list of todo items.
+ - Todo has an id, a subject, a due date and if the item is done or not.
+
+Start server
+The server requires Java SE 8 to run.
+
+Linux/OSX:
+ Change access permissions to the start script
+   sudo chmod 755 bin/TodoItemServer
+ Run the startscript
+   bin/TodoItemServer
+
+Windows:
+ Run the startscript
+   bin\TodoItemServer.bat
+
+The server startup on port 9000 and you can access it at http://localhost:9000
+
+
+The server provides to following REST API:
+---------------
+-- Get users --
+---------------
+Returns a list of users and their todo items.
+
+Request: GET /users
+Request body: n/a
+Response body:
+[
+	{
+        "id": {id},
+		"username": {username},
+		"email": {email},
+		"todos":
+		[
+			{
+				"subject": {subject},
+				"dueDate": {due date, format: yyyy-MM-dd HH:mm:ss},
+				"done": {true/false}
+			},
+			...
+		]
+	},
+	...
+]
+
+
+--------------
+-- Get user --
+--------------
+Return one specific user and his/her todo items.
+
+Request: GET /users/{id}
+Request body: n/a
+Response body:
+{
+    "id": {id},
+	"username": {username},
+	"email": {email},
+	"todos":
+	[
+		{
+			"subject": {subject},
+			"dueDate": {due date, format: yyyy-MM-dd HH:mm:ss},
+			"done": {true/false}
+		},
+		...
+	]
+}
+
+
+-----------------
+-- Create user --
+-----------------
+Create and add one user to the system 
+
+Request: POST /users
+Request body: 
+{
+    "id": {id (optional, will be generated if omitted)},
+	"username": {username},
+	"email": {email},
+	"todos":
+	[
+		{
+			"subject": {subject},
+			"dueDate": {due date, format: yyyy-MM-dd HH:mm:ss},
+			"done": {true/false}
+		},
+		...
+	]
+}
+Response body: n/a
+
+
+-----------------
+-- Delete user --
+-----------------
+Delete an existing user from the system 
+
+Request: DELETE /users/{id}
+Request body: n/a 
+Response body: n/a
+
+
+---------------
+-- Load data --
+---------------
+Inserts multiple users into the system 
+
+Request: POST /users/load
+Request body: 
+[
+    {
+        "id": {id (optional, will be generated if omitted)},
+        "username": {username},
+        "email": {email},
+        "todos":
+        [
+            {
+                "subject": {subject},
+                "dueDate": {due date, format: yyyy-MM-dd HH:mm:ss},
+                "done": {true/false}
+            },
+            ...
+        ]
+    },
+    ...
+]
+Response body: n/a
+
+
+---------------
+-- Get todos --
+---------------
+Returns a list of a users todo items.
+
+Request: GET /users/{user id}/todos
+Request body: n/a
+Response body:
+[
+    {
+        "id": {id},
+        "subject": {subject},
+        "dueDate": {due date, format: yyyy-MM-dd HH:mm:ss},
+        "done": {true/false}
+    },
+    ...
+]
+
+
+--------------
+-- Get todo --
+--------------
+Return one specific todo item from a specific user.
+
+Request: GET /users/{user id}/todos/{todo id}
+Request body: n/a
+Response body:
+{
+    "id": {id},
+    "subject": {subject},
+    "dueDate": {due date, format: yyyy-MM-dd HH:mm:ss},
+    "done": {true/false}
+}
+
+
+-----------------
+-- Create todo --
+-----------------
+Return one specific todo item from a specific user.
+
+Request: POST /users/{user id}/todos/{todo id}
+Request body:
+{
+    "id": {id},
+    "subject": {subject},
+    "dueDate": {due date, format: yyyy-MM-dd HH:mm:ss},
+    "done": {true/false}
+}
+Response body: n/a
+
+
+-----------------
+-- Update todo --
+-----------------
+Update one specific todo item for a specific user.
+
+Request: PUT /users/{user id}/todos/{todo id}
+Request body:
+{
+    "subject": {subject},
+    "dueDate": {due date, format: yyyy-MM-dd HH:mm:ss},
+    "done": {true/false}
+}
+Response body: n/a
+
+
+-----------------
+-- Delete todo --
+-----------------
+Return one specific todo item from a specific user.
+
+Request: DELETE /users/{user id}/todos/{todo id}
+Request body: n/a
+Response body: n/a
