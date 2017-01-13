@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace EFolderDomain.Interfaces
 {
     /*
-     * This interface represent methods to work with repository that keeps backups.
+     * This interface represents methods to work with repository that keeps backups.
      */
     public interface IBackupRepository
     {

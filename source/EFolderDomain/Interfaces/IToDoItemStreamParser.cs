@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EFolderDomain.Interfaces
 {
-    // It is iterator through ToDo items stream
+    // It is used to iterate through ToDo items in stream returned by JAVA service
     public interface IToDoItemStreamParser
     {
         // Init iterator with ToDo items stream
