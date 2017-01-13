@@ -7,4 +7,7 @@ source/UnitTestEFolderBackUp/obj/
 source/.vs/
 app/app.publish/
 app/ConsoleBackUp.vshost.exe
-ThirdParty/todoitemserver-1.0/bin/
+ThirdParty/JavaService/todoitemserver-1.0/bin/logs/
+ThirdParty/JavaService/todoitemserver-1.0/bin/RUNNING_PID
+ThirdParty/TestClientApp/.vs/
+ThirdParty/TestClientApp/TestClientApp/obj/
