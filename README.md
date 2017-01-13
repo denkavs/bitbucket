@@ -1,4 +1,4 @@
-Instructions to test application:
+Instructions to test application.
 1.	Start JAVA service  -"ThirdParty\JavaService\todoitemserver-1.0\bin\todoitemserver.bat". 
         In some cases you can get some error during run service: "The input line is too long. The syntax of the command is incorrect." The problem could be solved by reducing number of subfolders.
 2.	Run ConsoleBackUp.exe file. ("app\consolebackup.exe").
