@@ -5,7 +5,7 @@ Instructions to test application.
 2.1 	There are significant configuration settings for ConsoleBackUp.exe.
 	They are saved in file: ConsoleBackUp.exe.config
 	One of them:
-	<add key="MaxNumberOfBackUpConcarrentOperations" value="5" />
+	key="MaxNumberOfBackUpConcarrentOperations" value="5".
 
 3.	Use Postman client to make calls. (or any other comfortable for you)
 4.	For Creating ToDo backup do POST/ http://localhost:5454/api/backups call.
@@ -15,8 +15,8 @@ Instructions to test application.
 
 8. 	To emulate concurrent backup requests you can use next tool "ThirdParty\TestClientApp\". Run this tool from folder "ThirdParty\TestClientApp\TestClientApp\bin\Debug\testclientapp.exe"
 	Emulate tool has next significant parameters that could be changed in TestClientApp.exe.config file:
-	<add key="TimeBetweenRequestsInMilliseconds" value="2000" />
-	<add key="RequestCount" value="10" />
+	key="TimeBetweenRequestsInMilliseconds" value="2000" 
+	key="RequestCount" value="10"
 
 How to build the application instructions:
 Application was developed with VisualStudio 2015. Use "EFolderBackUp.sln" file to open solution.
