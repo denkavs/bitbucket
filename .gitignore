@@ -1,0 +1,7 @@
+source/ConsoleBackUp/bin/
+source/ConsoleBackUp/obj/
+source/EFolderDomain/bin/
+source/EFolderDomain/obj/
+source/UnitTestEFolderBackUp/bin/
+source/UnitTestEFolderBackUp/obj/
+source/.vs/
